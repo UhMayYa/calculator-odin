@@ -60,10 +60,19 @@ for(buttonId in buttonsSelector)
             //If the user inputs an operator one after another instead of a number (For example: 6+-,8/*), replace the operator with the current operator.
             if(numberFormed === "")
             {
+                //Logic to handle cases where there was an insuffcient amount of operands to pass to the calculate() function.
+                let lastIndexOfDisplayVar = displayVar.textContent.length - 1;
+                if(numberCheck.includes(displayVar.textContent.charAt(lastIndexOfDisplayVar)))
+                {
+                    console.log("Number found without an operator in front. Proceed as normal.")
+                }
+                else
+                {
                 let oldText = displayVar.textContent.slice(0,-1);
                 //We remove the old operator from the operatorArray. The new operator will be included at the end of the function.
                 operatorArray.pop();
                 displayVar.textContent = oldText;
+                }
             }
             else
             {
@@ -108,8 +117,6 @@ for(buttonId in buttonsSelector)
             {
             numberArray.push(numberFormed);
             numberFormed = "";
-            console.log(numberArray);
-            console.log(operatorArray);
             //Only perform calculation when the required amount of numbers and operators have been met.
             if(numberArray.length === 2 && operatorArray.length === 1)
             {
@@ -148,7 +155,6 @@ function operate(num1, num2, calcOperator)
                 alert("Cannot divide by 0");
                 displayVar.textContent = "";
                 calculatedResult = "";
-                console.log(convertedNum2);
                 return 0;
             }
             calculatedResult = convertedNum1 / convertedNum2;
