@@ -9,6 +9,7 @@ body{
     width: 290px;
     border: 1px solid black;
     margin: 20px 0px;
+    font-size: 26px;
 }
 #calc-buttons button{
     height: 40px;
