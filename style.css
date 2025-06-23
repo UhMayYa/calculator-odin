@@ -1,0 +1,16 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#display-screen{
+    height: 40px;
+    width: 290px;
+    border: 1px solid black;
+    margin: 20px 0px;
+}
+#calc-buttons button{
+    height: 40px;
+    width: 70px;
+}
