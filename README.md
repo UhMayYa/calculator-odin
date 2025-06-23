@@ -1,1 +1,1 @@
-# calculator-odin
+Following is code for the calculator project.
